@@ -10,7 +10,7 @@ import pandas as pd
 #웹드라이버 실행
 driver = webdriver.Chrome('./chromedriver.exe')
 #사이트 접근
-driver.get('https://www.autoinside.co.kr/display/se/display_se_auc_end_list.do')
+driver.get('****************')
 html_source = driver.page_source
 soup = BeautifulSoup(html_source,'html.parser')
 
@@ -80,3 +80,7 @@ for i in range(2,4):
                     continue
                 driver.find_element_by_xpath('//*[@id="content"]/div[5]/div/a[3]').click()
                 time.sleep(3)
+
+df = pd.DataFrame(result)
+df.to_csv('./car.csv', index=False)
+df.head()
