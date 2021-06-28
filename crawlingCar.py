@@ -38,7 +38,7 @@ for i in range(2,4):
             model_x.click()
             time.sleep(1)
             driver.find_element_by_xpath('//*[@id="content"]/div[2]/ul/li[6]/a').click()
-            time.sleep(5)
+            webDriverWait(driver,30).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="i_sOrder"]')))
             try:
                 numt = driver.find_element_by_xpath('//*[@id="content"]/div[5]/div/a[4]').get_attribute('href')
                 if numt!='javascript:;':
@@ -79,7 +79,7 @@ for i in range(2,4):
                     print('fail')
                     continue
                 driver.find_element_by_xpath('//*[@id="content"]/div[5]/div/a[3]').click()
-                time.sleep(3)
+                webDriverWait(driver,30).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="i_sOrder"]')))
 
 df = pd.DataFrame(result)
 df.to_csv('./car.csv', index=False)
