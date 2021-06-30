@@ -1,0 +1,23 @@
+#python 버전확인
+python3 --version
+
+#가상환경 생성
+#python3 -m venv ./(생성하고자하는 가상환경 이름)
+python3 -m venv ./myenv
+
+#가상환경 활성화
+source myenv/bin/active
+
+#현재 디렉토리 표기 앞에 가상환경 이름 표시 확인
+(myenv) ****@****ui-MacBookPro ~ %
+
+#설치 라이브러리 확인
+pip3 list
+
+#라이브러리 설치
+pip3 install selenium
+
+#가상환경 비활성화 
+deactivate
+
+#가상환경과 비가상환경에서 각각 라이브러리 확인
