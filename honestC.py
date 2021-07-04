@@ -60,5 +60,8 @@ for i in range(2):
 df = pd.DataFrame(result)
 
 df.to_csv('./honestC.csv', index=False)
-
 print(df.head())
+
+df2 = pd.read_csv('./honestCar.csv', delimiter=',')
+df2['company'] = df2.company.str.split('｜').str[0]
+print(df2.head())
